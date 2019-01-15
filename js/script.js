@@ -1,3 +1,5 @@
+var pageValueRecord = {} ;
+
 function updateBullRetuenTable(){
     var bullLow  = parseFloat( $( "#bull-return-low" ).val()) ;
     var bullHigh = parseFloat( $( "#bull-return-high" ).val()) ;
@@ -8,7 +10,36 @@ function updateBullRetuenTable(){
     }
 }
 
-$(document).ready(function(){
+function recordNumberBeforeChangePage(toRecord){
+    var currentPageName = $("#drawer-list a.active").attr('id');
+    pageValueRecord[currentPageName] = toRecord ;
+}
+
+function recoverRecordNumber(){
+    var currentPageName = $("#drawer-list a.active").attr('id');
+    return pageValueRecord[currentPageName];
+}
+
+function changePageTo(destination){
+    var toRecord = [$('.record-1').val(),$('.record-2').val(),$('.record-3').val()];
+    recordNumberBeforeChangePage(toRecord);
+    
+    $("#drawer-list a.active").removeClass('active');
+    $('#' + destination).addClass('active');
+    
+    if ( $("#drawer-list a.active").data("page") == 'p1' ){
+        renderP1();
+    }
+}
+
+function renderP1(){
+    if ( $("#drawer-list a.active").attr('id') == "bull-return-menu" ){
+        $('.p1.bear').hide();
+        $('.p1.bull').show();
+    }else{
+        $('.p1.bear').show();
+        $('.p1.bull').hide();        
+    }
     $( "#bull-return-low" ).keyup(function() {
         updateBullRetuenTable();
     });
@@ -31,8 +62,25 @@ $(document).ready(function(){
         $( "#bull-return-high" ).val( parseInt( $( "#bull-return-high" ).val() ) + 1 ) ;
         updateBullRetuenTable();
     });    
-    $( "#bull-return-high" ).val(9600);
-    $( "#bull-return-low" ).val(9500);
+    
+    var recoverdNumber = recoverRecordNumber() ;
+    if (recoverdNumber === undefined){
+        $( "#bull-return-high" ).val(9600);
+        $( "#bull-return-low" ).val(9500);
+    }else{
+        $( "#bull-return-high" ).val(recoverdNumber[0]);
+        $( "#bull-return-low" ).val(recoverdNumber[1]);
+    }
     updateBullRetuenTable();
+    
+}
+
+$(document).ready(function(){
+    $('#drawer-list a').click(function(){
+        changePageTo($(this).attr('id'));
+    });
+    
+    renderP1("bull");
+
 });
 

@@ -17,8 +17,8 @@
             <i class="material-icons">menu</i>
           </button>
           <ul class="nav navbar-nav">
-            <li class="nav-item color-red">漲勢回測</li>
-            <li class="nav-item" style="display:none">跌勢反彈</li>
+            <li class="nav-item color-red p1 bull">漲勢回測</li>
+            <li class="nav-item color-green p1 bear">跌勢反彈</li>
           </ul>
         </div>
       </header>
@@ -26,9 +26,9 @@
         <header>
           <a class="navbar-brand">選單</a>
         </header>
-        <ul class="list-group">
-          <a class="list-group-item active">漲勢回測</a>
-          <a class="list-group-item">跌勢反彈</a>
+        <ul id="drawer-list" class="list-group">
+          <a id="bull-return-menu" class="list-group-item active" data-page="p1">漲勢回測</a>
+          <a id="bear-return-menu"class="list-group-item" data-page="p1">跌勢反彈</a>
         </ul>
       </div>
       <main class="bmd-layout-content">
@@ -40,10 +40,11 @@
                 <div class="col-10">
                   <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                      <span class="input-group-text color-red">止漲高點</span>
+                      <span class="input-group-text color-red p1 bull">止漲高點</span>
+                      <span class="input-group-text color-green p1 bear">起跌高點</span>
                       <button type="button" class="btn" id="bull-return-high-left"><i class="material-icons">navigate_before</i></button>
                     </div>
-                    <input id="bull-return-high" style="text-align:center" type="number" class="form-control form-control-lg" placeholder="9600">
+                    <input id="bull-return-high" style="text-align:center" type="number" class="form-control form-control-lg record-1" placeholder="">
                     <div class="input-group-append">
                       <button type="button" class="btn" id="bull-return-high-right"><i class="material-icons">navigate_next</i></button>
                     </div>
@@ -55,10 +56,11 @@
                 <div class="col-10">
                   <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                      <span class="input-group-text color-red">起漲低點</span>
+                      <span class="input-group-text color-red p1 bull">起漲低點</span>
+                      <span class="input-group-text color-green p1 bear">止跌低點</span>
                       <button type="button" class="btn" id="bull-return-low-left"><i class="material-icons">navigate_before</i></button>
                     </div>
-                    <input id="bull-return-low" style="text-align:center" type="number" class="form-control form-control-lg" placeholder="9500">
+                    <input id="bull-return-low" style="text-align:center" type="number" class="form-control form-control-lg record-2" placeholder="">
                     <div class="input-group-append">
                       <button type="button" class="btn" id="bull-return-low-right"><i class="material-icons">navigate_next</i></button>
                     </div>
@@ -67,7 +69,8 @@
               </div>
               <div class="row" style="margin-top:2%">
                 <div class="col-1"></div>
-                <div class="col-10"><h4 class="color-red">回測買點</h3></div>
+                <div class="col-10 p1 bull"><h4 class="color-red">回測買點</h3></div>
+                <div class="col-10 p1 bear"><h4 class="color-green">反彈空點</h3></div>
               </div>
               <div class="row" style="margin-top:2%">
                 <div class="col-1"></div>
@@ -75,8 +78,10 @@
                   <table class="table table-sm table-striped">
                     <thead>
                       <tr>
-                        <th scope="col"><span class="color-red">回測比率</span></th>
-                        <th scope="col"><span class="color-red">點位</span></th>
+                        <th scope="col" class="p1 bull"><span class="color-red">回測比率</span></th>
+                        <th scope="col" class="p1 bear"><span class="color-green">反彈比率</span></th>
+                        <th scope="col" class="p1 bull"><span class="color-red">點位</span></th>
+                        <th scope="col" class="p1 bear"><span class="color-green">點位</span></th>
                       </tr>
                     </thead>
                     <tbody>
@@ -84,7 +89,7 @@
                       <tr><th scope="row">0.236</th><td id="bull-return-0236">0.0</td></tr>
                       <tr><th scope="row">0.333</th><td id="bull-return-0333">0.0</td></tr>
                       <tr><th scope="row">0.382</th><td id="bull-return-0382">0.0</td></tr>
-                      <tr><th scope="row">0.500</th><td id="bull-return-0500">0.0</td></tr>
+                      <tr class="table-warning"><th scope="row">0.500</th><td id="bull-return-0500">0.0</td></tr>
                       <tr><th scope="row">0.618</th><td id="bull-return-0618">0.0</td></tr>
                       <tr><th scope="row">0.666</th><td id="bull-return-0666">0.0</td></tr>
                       <tr><th scope="row">0.764</th><td id="bull-return-0764">0.0</td></tr>
