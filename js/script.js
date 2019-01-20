@@ -41,6 +41,17 @@ function changePageTo(destination){
     }
 }
 
+function focusToInput(caller){
+    $("#flex-placeholder").show();
+    setTimeout(function() {
+        caller.scrollIntoView(true);
+    }, 100);
+}
+
+function blurFromInput(){
+    $("#flex-placeholder").hide();
+}
+
 function renderP1(){
     if ( $("#drawer-list a.active").attr('id') == "bull-return-menu" ){
         $('.p1.bear').hide();
@@ -53,19 +64,49 @@ function renderP1(){
     // Bind all listener
     $( "#bull-return-low" ).unbind("keyup");
     $( "#bull-return-high" ).unbind("keyup");
+    $( "#bull-return-back" ).unbind("keyup");
+    $( "#bull-return-low" ).unbind("focus");
+    $( "#bull-return-high" ).unbind("focus");
+    $( "#bull-return-back" ).unbind("focus");
+    $( "#bull-return-low" ).unbind("blur");
+    $( "#bull-return-high" ).unbind("blur");
+    $( "#bull-return-back" ).unbind("blur");
     $("#bull-return-low-left").unbind("click");
     $("#bull-return-low-right").unbind("click");
     $("#bull-return-high-left").unbind("click");
     $("#bull-return-high-right").unbind("click");
     $("#bull-return-back-left").unbind("click");
     $("#bull-return-back-right").unbind("click");
+    
     $("#h-switch").unbind("change");
     $( "#bull-return-low" ).keyup(function() {
         updateBullRetuenTable();
     });
+    $( "#bull-return-low" ).focus(function() {
+        focusToInput(this);
+    });
+    $( "#bull-return-low" ).blur(function() {
+        blurFromInput();
+    });
     $( "#bull-return-high" ).keyup(function() {
         updateBullRetuenTable();
     });
+    $( "#bull-return-high" ).focus(function() {
+        focusToInput(this);
+    });
+    $( "#bull-return-high" ).blur(function() {
+        blurFromInput();
+    });
+    $( "#bull-return-back" ).keyup(function() {
+        updateBullRetuenTable();
+    });
+    $( "#bull-return-back" ).focus(function() {
+        focusToInput(this);
+    });
+    $( "#bull-return-back" ).blur(function() {
+        blurFromInput();
+    });
+    
     $("#bull-return-low-left").click(function(){
         $( "#bull-return-low" ).val( parseInt( $( "#bull-return-low" ).val() ) - 1 ) ;
         updateBullRetuenTable();
