@@ -5,7 +5,7 @@ function updateBullRetuenTable(){
     var bullHigh = parseFloat( $( "#bull-return-high" ).val()) ;
     var bullBack = parseFloat( $( "#bull-return-back" ).val()) ;
     var diff = bullHigh - bullLow ;
-    var ratio = [191,236,333,382,500,618,666,764,809,875,1000,1100,1191,1382,1500,1618,1809,2000,3000];
+    var ratio = [191,236,333,382,500,618,666,764,809,875,1000,1100,1382,1500,1618,1809,2000,3000];
     for ( var i = 0 ; i < ratio.length ; i++){
         if ( $("#h-switch").prop("checked") ){
             if ( $("#drawer-list a.active").attr('id') == "bull-return-menu" ){
