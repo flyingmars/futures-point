@@ -7,6 +7,14 @@
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
     <link rel="stylesheet" href="css/style.css">
+    
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-9352604261981447",
+        enable_page_level_ads: true
+      });
+    </script>
   </head>
   <body>
     <div class="bmd-layout-container bmd-drawer-f-l bmd-drawer-overlay">
@@ -44,10 +52,51 @@
         <div class="container">
           <div id="bull-return">
             <div class="container text-center">
+              <div class="row mt-3 return-only">
+                <div class="col-1"></div>
+                <div class="col-10 p1 bull"><h4 class="color-red">回測買點</h3></div>
+                <div class="col-10 p1 bear"><h4 class="color-green">反彈空點</h3></div>
+              </div>
+              <div class="row mt-1 ">
+                <div class="col-1"></div>
+                <div class="col-10 ">
+                  <table class="table table-sm table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col" class="p1 bull"><span class="color-red">回測比率</span></th>
+                        <th scope="col" class="p1 bear"><span class="color-green">反彈比率</span></th>
+                        <th scope="col" class="p1 bull"><span class="color-red">點位</span></th>
+                        <th scope="col" class="p1 bear"><span class="color-green">點位</span></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr><th scope="row">0.191</th><td id="bull-return-191">0.0</td></tr>
+                      <tr class="return-only"><th scope="row">0.236</th><td id="bull-return-236">0.0</td></tr>
+                      <tr class="return-only"><th scope="row">0.333</th><td id="bull-return-333">0.0</td></tr>
+                      <tr><th scope="row">0.382</th><td id="bull-return-382">0.0</td></tr>
+                      <tr class="table-warning"><th scope="row">0.500</th><td id="bull-return-500">0.0</td></tr>
+                      <tr><th scope="row">0.618</th><td id="bull-return-618">0.0</td></tr>
+                      <tr class="return-only"><th scope="row">0.666</th><td id="bull-return-666">0.0</td></tr>
+                      <tr class="return-only"><th scope="row">0.764</th><td id="bull-return-764">0.0</td></tr>
+                      <tr><th scope="row">0.809</th><td id="bull-return-809">0.0</td></tr>
+                      <tr><th scope="row">0.875</th><td id="bull-return-875">0.0</td></tr>
+                      <tr class="h-only table-warning"><th scope="row">1.000</th><td id="bull-return-1000">0.0</td></tr>
+                      <tr class="h-only"><th scope="row">1.100</th><td id="bull-return-1100">0.0</td></tr>
+                      <tr class="h-only"><th scope="row">1.191</th><td id="bull-return-1191">0.0</td></tr>
+                      <tr class="h-only table-warning"><th scope="row">1.382</th><td id="bull-return-1382">0.0</td></tr>
+                      <tr class="h-only table-warning"><th scope="row">1.500</th><td id="bull-return-1500">0.0</td></tr>
+                      <tr class="h-only"><th scope="row">1.618</th><td id="bull-return-1618">0.0</td></tr>
+                      <tr class="h-only"><th scope="row">1.809</th><td id="bull-return-1809">0.0</td></tr>
+                      <tr class="h-only"><th scope="row">2.000</th><td id="bull-return-2000">0.0</td></tr>
+                      <tr class="h-only"><th scope="row">3.000</th><td id="bull-return-3000">0.0</td></tr>                      
+                    </tbody>
+                  </table>
+                </div>
+              </div>
               <div class="row">
                 <div class="col-1"></div>
                 <div class="col-10">
-                  <div class="input-group mt-2">
+                  <div class="input-group mt-0">
                     <div class="input-group-prepend">
                       <span class="input-group-text color-red p1 bull">止漲高點</span>
                       <span class="input-group-text color-green p1 bear">起跌高點</span>
@@ -91,48 +140,7 @@
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="row mt-3">
-                <div class="col-1"></div>
-                <div class="col-10 p1 bull"><h4 class="color-red">回測買點</h3></div>
-                <div class="col-10 p1 bear"><h4 class="color-green">反彈空點</h3></div>
-              </div>
-              <div class="row mt-1">
-                <div class="col-1"></div>
-                <div class="col-10">
-                  <table class="table table-sm table-striped">
-                    <thead>
-                      <tr>
-                        <th scope="col" class="p1 bull"><span class="color-red">回測比率</span></th>
-                        <th scope="col" class="p1 bear"><span class="color-green">反彈比率</span></th>
-                        <th scope="col" class="p1 bull"><span class="color-red">點位</span></th>
-                        <th scope="col" class="p1 bear"><span class="color-green">點位</span></th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr><th scope="row">0.191</th><td id="bull-return-191">0.0</td></tr>
-                      <tr class="return-only"><th scope="row">0.236</th><td id="bull-return-236">0.0</td></tr>
-                      <tr class="return-only"><th scope="row">0.333</th><td id="bull-return-333">0.0</td></tr>
-                      <tr><th scope="row">0.382</th><td id="bull-return-382">0.0</td></tr>
-                      <tr class="table-warning"><th scope="row">0.500</th><td id="bull-return-500">0.0</td></tr>
-                      <tr><th scope="row">0.618</th><td id="bull-return-618">0.0</td></tr>
-                      <tr class="return-only"><th scope="row">0.666</th><td id="bull-return-666">0.0</td></tr>
-                      <tr class="return-only"><th scope="row">0.764</th><td id="bull-return-764">0.0</td></tr>
-                      <tr><th scope="row">0.809</th><td id="bull-return-809">0.0</td></tr>
-                      <tr><th scope="row">0.875</th><td id="bull-return-875">0.0</td></tr>
-                      <tr class="h-only table-warning"><th scope="row">1.000</th><td id="bull-return-1000">0.0</td></tr>
-                      <tr class="h-only"><th scope="row">1.100</th><td id="bull-return-1100">0.0</td></tr>
-                      <tr class="h-only"><th scope="row">1.191</th><td id="bull-return-1191">0.0</td></tr>
-                      <tr class="h-only table-warning"><th scope="row">1.382</th><td id="bull-return-1382">0.0</td></tr>
-                      <tr class="h-only table-warning"><th scope="row">1.500</th><td id="bull-return-1500">0.0</td></tr>
-                      <tr class="h-only"><th scope="row">1.618</th><td id="bull-return-1618">0.0</td></tr>
-                      <tr class="h-only"><th scope="row">1.809</th><td id="bull-return-1809">0.0</td></tr>
-                      <tr class="h-only"><th scope="row">2.000</th><td id="bull-return-2000">0.0</td></tr>
-                      <tr class="h-only"><th scope="row">3.000</th><td id="bull-return-3000">0.0</td></tr>                      
-                    </tbody>
-                  </table>
-                </div>
-              </div>
+              </div>              
             </div> <!-- bull-return container -->
           </div> <!-- bull-return -->
         </div>
