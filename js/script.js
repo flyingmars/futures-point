@@ -143,9 +143,9 @@ function renderP1(){
     // recover all numbers
     var recoverdNumber = recoverRecordNumber() ;
     if (recoverdNumber === undefined){
-        $( "#bull-return-high" ).val(9600);
-        $( "#bull-return-low" ).val(9500);
-        $( "#bull-return-back" ).val(9550);
+        $( "#bull-return-high" ).val();
+        $( "#bull-return-low" ).val();
+        $( "#bull-return-back" ).val();
     }else{
         $( "#bull-return-high" ).val(recoverdNumber[0]);
         $( "#bull-return-low" ).val(recoverdNumber[1]);
