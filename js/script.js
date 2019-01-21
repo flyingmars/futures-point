@@ -5,7 +5,7 @@ function updateBullRetuenTable(){
     var bullHigh = parseFloat( $( "#bull-return-high" ).val()) ;
     var bullBack = parseFloat( $( "#bull-return-back" ).val()) ;
     var diff = bullHigh - bullLow ;
-    var ratio = [191,236,333,382,500,618,666,764,809,875,1000,1100,1382,1500,1618,1809,2000,3000];
+    var ratio = [191,236,333,382,500,618,666,764,809,875,1000,1100,1191,1382,1500,1618,1809,2000,3000];
     for ( var i = 0 ; i < ratio.length ; i++){
         if ( $("#h-switch").prop("checked") ){
             if ( $("#drawer-list a.active").attr('id') == "bull-return-menu" ){
@@ -14,7 +14,11 @@ function updateBullRetuenTable(){
                 $( "#bull-return-" + ratio[i] ).html( Math.round( (bullBack - diff * ratio[i] / 1000 ) * 100) / 100 );
             }
         }else{
-            $( "#bull-return-" + ratio[i] ).html( Math.round( (bullHigh - diff * ratio[i] / 1000 ) * 100) / 100 );
+            if ( $("#drawer-list a.active").attr('id') == "bull-return-menu" ){
+                $( "#bull-return-" + ratio[i] ).html( Math.round( (bullHigh - diff * ratio[i] / 1000 ) * 100) / 100 );
+            }else{
+                $( "#bull-return-" + ratio[i] ).html( Math.round( (bullHigh - (1 - diff) * ratio[i] / 1000 ) * 100) / 100 );
+            }
         }
     }
 }
