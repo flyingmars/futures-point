@@ -9,15 +9,17 @@ function updateBullRetuenTable(){
     for ( var i = 0 ; i < ratio.length ; i++){
         if ( $("#h-switch").prop("checked") ){
             if ( $("#drawer-list a.active").attr('id') == "bull-return-menu" ){
-                $( "#bull-return-" + ratio[i] ).html( Math.round( (bullBack + diff * ratio[i] / 1000 ) * 100) / 100 );
+                $( "#bull-return-" + ratio[i] ).html( Math.round( (bullBack + diff * ratio[i] / 1000.0 ) * 100) / 100 );
             }else{
-                $( "#bull-return-" + ratio[i] ).html( Math.round( (bullBack - diff * ratio[i] / 1000 ) * 100) / 100 );
+                $( "#bull-return-" + ratio[i] ).html( Math.round( (bullBack - diff * ratio[i] / 1000.0 ) * 100) / 100 );
             }
         }else{
             if ( $("#drawer-list a.active").attr('id') == "bull-return-menu" ){
-                $( "#bull-return-" + ratio[i] ).html( Math.round( (bullHigh - diff * ratio[i] / 1000 ) * 100) / 100 );
+                 console.log("INA");
+                $( "#bull-return-" + ratio[i] ).html( Math.round( (bullHigh - diff * ratio[i] / 1000.0 ) * 100) / 100 );
             }else{
-                $( "#bull-return-" + ratio[i] ).html( Math.round( (bullHigh - (1 - diff) * ratio[i] / 1000 ) * 100) / 100 );
+                console.log("INB");
+                $( "#bull-return-" + ratio[i] ).html( Math.round( (bullLow + (diff) * ratio[i] / 1000.0 ) * 100) / 100 );
             }
         }
     }
