@@ -15,10 +15,8 @@ function updateBullRetuenTable(){
             }
         }else{
             if ( $("#drawer-list a.active").attr('id') == "bull-return-menu" ){
-                 console.log("INA");
                 $( "#bull-return-" + ratio[i] ).html( Math.round( (bullHigh - diff * ratio[i] / 1000.0 ) * 100) / 100 );
             }else{
-                console.log("INB");
                 $( "#bull-return-" + ratio[i] ).html( Math.round( (bullLow + (diff) * ratio[i] / 1000.0 ) * 100) / 100 );
             }
         }
